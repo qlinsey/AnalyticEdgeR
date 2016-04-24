@@ -1,0 +1,18 @@
+AN ANALYTICAL DETECTIVE
+Problem 2.3 - Understanding Dates in R
+#In which month did the fewest motor vehicle thefts occur?
+mvt$Month = months(DateConvert)
+mvt$Weekday = weekdays(DateConvert)
+mvt$Date = DateConvert
+which.min(table(mvt$Month))
+
+Problem 2.4 - Understanding Dates in R 
+#On which weekday did the most motor vehicle thefts occur?
+which.max(table(mvt$Weekday))
+
+Problem 2.5 - Understanding Dates in R 
+#Which month has the largest number of motor vehicle thefts for which an arrest was made?
+which.max(table(mvt$Arrest=="TRUE",mvt$Month)[2,])
+
+Problem 3.1 - Visualizing Crime Trends
+hist(mvt$Date, breaks=100)
